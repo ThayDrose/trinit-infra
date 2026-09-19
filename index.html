@@ -1,0 +1,372 @@
+<!doctype html>
+<html lang="pt-PT">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>trinit() | Infraestrutura de Dados B2B</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap"
+      rel="stylesheet"
+    />
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              dark: "#0D1117",
+              surface: "#161B22",
+              borderGray: "#30363D",
+              textGray: "#8B949E",
+              cyberViolet: "#A855F7",
+              accentBlue: "#58A6FF",
+            },
+            fontFamily: {
+              sans: ["Inter", "sans-serif"],
+              mono: ["JetBrains Mono", "monospace"],
+            },
+          },
+        },
+      };
+    </script>
+  </head>
+  <body class="bg-dark text-white font-sans antialiased">
+    <!-- Navegação Minimalista -->
+    <nav
+      class="border-b border-borderGray px-8 py-4 flex justify-between items-center"
+    >
+      <div class="font-mono text-sm font-bold tracking-tight">
+        <span class="text-cyberViolet">~</span> trinit()
+      </div>
+      <div class="text-xs text-textGray font-mono">
+        V 1.0.0 | STATUS: <span class="text-cyberViolet">ONLINE</span>
+      </div>
+    </nav>
+
+    <!-- Seção 1: Hero -->
+    <main
+      class="max-w-7xl mx-auto px-8 py-24 grid lg:grid-cols-2 gap-16 items-center"
+    >
+      <div>
+        <div
+          class="inline-flex items-center gap-2 border border-borderGray bg-surface px-3 py-1 rounded-full mb-6"
+        >
+          <span
+            class="w-2 h-2 rounded-full bg-cyberViolet animate-pulse"
+          ></span>
+          <span class="text-xs font-mono text-textGray">PIPELINE ATIVO</span>
+        </div>
+
+        <h1 class="text-4xl lg:text-5xl font-semibold leading-tight mb-6">
+          Otimização de CAC através de infraestrutura de dados modelados.
+        </h1>
+
+        <p class="text-lg text-textGray mb-8 leading-relaxed">
+          Operações de outbound queimam caixa validando listas sujas.
+          Construímos o motor que varre mercados, identifica anomalias
+          comerciais e entrega dossiês de inteligência prontos para conversão.
+        </p>
+
+        <div
+          class="text-sm font-mono text-textGray border-l-2 border-borderGray pl-4"
+        >
+          > Infraestrutura operando com alocação territorial restrita.
+        </div>
+      </div>
+
+      <div
+        class="rounded-xl border border-borderGray bg-surface overflow-hidden shadow-2xl"
+      >
+        <div class="bg-dark border-b border-borderGray px-4 py-3 flex gap-2">
+          <div class="w-3 h-3 rounded-full bg-red-500"></div>
+          <div class="w-3 h-3 rounded-full bg-yellow-500"></div>
+          <div class="w-3 h-3 rounded-full bg-green-500"></div>
+        </div>
+        <div class="p-6 font-mono text-sm text-textGray space-y-2">
+          <p>
+            <span class="text-accentBlue">user@server:~$</span> python
+            executar_pipeline.py --alvo "b2b"
+          </p>
+          <p class="text-white">
+            [INFO] Iniciando varredura georreferenciada...
+          </p>
+          <p>
+            [PROCESSANDO] Extraindo domínios na região de Florianópolis/SC...
+          </p>
+          <p>
+            [AUDITORIA] Mapeando infraestrutura comercial e gargalos técnicos...
+          </p>
+          <p class="text-cyberViolet">
+            [SUCESSO] 147 anomalias detetadas. Dossiê Gold gerado.
+          </p>
+          <p class="animate-pulse">_</p>
+        </div>
+      </div>
+    </main>
+
+    <!-- Seção 2: Manifesto Técnico (Valores) -->
+    <section class="border-t border-borderGray bg-surface py-20">
+      <div class="max-w-7xl mx-auto px-8 grid lg:grid-cols-4 gap-12">
+        <div class="lg:col-span-1">
+          <h2 class="text-xs font-mono text-cyberViolet mb-2">
+            /MANIFESTO_OPERACIONAL
+          </h2>
+          <h3 class="text-2xl font-semibold">
+            Os Nossos Princípios Fundacionais.
+          </h3>
+        </div>
+
+        <div class="lg:col-span-3 grid md:grid-cols-3 gap-8">
+          <div
+            class="border-l border-borderGray pl-6 hover:border-cyberViolet transition-colors duration-300"
+          >
+            <h4 class="text-white font-medium mb-3">
+              Engenharia sobre Intuição
+            </h4>
+            <p class="text-textGray text-sm leading-relaxed">
+              Decisões comerciais exigem assimetria de informações e dados
+              rigorosamente estruturados. O mercado não tolera mais prospecções
+              baseadas em achismos.
+            </p>
+          </div>
+
+          <div
+            class="border-l border-borderGray pl-6 hover:border-cyberViolet transition-colors duration-300"
+          >
+            <h4 class="text-white font-medium mb-3">Automação Radical</h4>
+            <p class="text-textGray text-sm leading-relaxed">
+              O tempo da sua equipa comercial é caro demais para ser gasto a
+              limpar planilhas. Eliminamos o trabalho braçal da prospecção,
+              delegando a busca e a filtragem de contactos a robôs
+              automatizados.
+            </p>
+          </div>
+
+          <div
+            class="border-l border-borderGray pl-6 hover:border-cyberViolet transition-colors duration-300"
+          >
+            <h4 class="text-white font-medium mb-3">Inteligência Acionável</h4>
+            <p class="text-textGray text-sm leading-relaxed">
+              Dados desordenados geram paralisia analítica. A nossa arquitetura
+              entrega apenas cenários modelados e prontos para conversão
+              imediata.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Seção 3: A Tese e Módulos do Sistema -->
+    <section class="border-t border-borderGray bg-dark py-24">
+      <div class="max-w-7xl mx-auto px-8">
+        <div class="text-center max-w-3xl mx-auto mb-16">
+          <h2 class="text-3xl font-semibold mb-6">
+            O mercado opera na superfície. Nós operamos na infraestrutura.
+          </h2>
+          <p class="text-textGray text-lg">
+            Não vendemos listas estáticas de CNPJs. Mapeamos empresas
+            consolidadas que operam com deficiências graves de rastreamento e
+            entregamos essa inteligência para a sua equipa comercial agir.
+          </p>
+        </div>
+
+        <div class="grid md:grid-cols-3 gap-8">
+          <!-- Módulo 1: Signals -->
+          <div
+            class="bg-surface p-8 rounded-xl border border-borderGray hover:border-cyberViolet transition-colors duration-300"
+          >
+            <div class="text-cyberViolet font-mono text-sm mb-1">
+              >_ trinit().signals
+            </div>
+            <div class="text-white font-medium text-lg mb-4">
+              Varredura Georreferenciada
+            </div>
+            <p class="text-textGray text-sm leading-relaxed">
+              Coleta e auditoria sistemática de dados de empresas em polos
+              selecionados e ecossistemas de tecnologia.
+            </p>
+          </div>
+
+          <!-- Módulo 2: Clean -->
+          <div
+            class="bg-surface p-8 rounded-xl border border-borderGray hover:border-cyberViolet transition-colors duration-300"
+          >
+            <div class="text-cyberViolet font-mono text-sm mb-1">
+              >_ trinit().clean
+            </div>
+            <div class="text-white font-medium text-lg mb-4">
+              Higienização & Modelagem
+            </div>
+            <p class="text-textGray text-sm leading-relaxed">
+              Mapeamento de fricção e exclusão sumária de dados corrompidos,
+              empresas inativas ou sem infraestrutura digital.
+            </p>
+          </div>
+
+          <!-- Módulo 3: Data -->
+          <div
+            class="bg-surface p-8 rounded-xl border border-borderGray hover:border-cyberViolet transition-colors duration-300"
+          >
+            <div class="text-cyberViolet font-mono text-sm mb-1">
+              >_ trinit().data
+            </div>
+            <div class="text-white font-medium text-lg mb-4">
+              Dossiê Executivo
+            </div>
+            <p class="text-textGray text-sm leading-relaxed">
+              Estruturação final das oportunidades em dados limpos, formatados
+              para ingestão direta e conversão pela sua equipa de outbound.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Seção 4: O Antes e Depois (Split-Screen) -->
+    <section class="border-t border-borderGray bg-surface py-24">
+      <div class="max-w-7xl mx-auto px-8">
+        <div class="mb-12">
+          <h2 class="text-3xl font-semibold mb-4">
+            Da extração bruta à modelagem relacional.
+          </h2>
+          <p class="text-textGray">
+            O tempo da sua equipa deve ser investido em negociação, não na
+            higienização manual de linhas.
+          </p>
+        </div>
+
+        <div class="grid lg:grid-cols-2 gap-8">
+          <!-- O Caos -->
+          <div
+            class="border border-borderGray rounded-xl bg-dark overflow-hidden"
+          >
+            <div
+              class="bg-red-500/10 border-b border-red-500/20 px-4 py-2 font-mono text-xs text-red-400"
+            >
+              base_bruta_desordenada.csv (Antes)
+            </div>
+            <div
+              class="p-6 font-mono text-xs text-textGray overflow-x-auto whitespace-pre"
+            >
+              nome_empresa,contacto,site,erro Clinica
+              Alpha,n/a,http://...,ERR_TIMEOUT Beta Tech,(48)999...,n/a,null
+              Gama Solutions,contacto@...,http://...,null Delta
+              SA,null,null,ERR_CONNECTION_REFUSED Omega
+              Inc,sac@...,http://omega...,null
+            </div>
+          </div>
+
+          <!-- A Ordem -->
+          <div
+            class="border border-borderGray rounded-xl bg-dark overflow-hidden shadow-lg shadow-cyberViolet/5"
+          >
+            <div
+              class="bg-cyberViolet/10 border-b border-cyberViolet/20 px-4 py-2 font-mono text-xs text-cyberViolet"
+            >
+              dossie_b2b_enriquecido.xlsx (Depois)
+            </div>
+            <div class="p-6 overflow-x-auto">
+              <table class="w-full text-left font-mono text-xs text-textGray">
+                <thead>
+                  <tr class="text-white border-b border-borderGray">
+                    <th class="pb-3 font-medium">Empresa</th>
+                    <th class="pb-3 font-medium">Maturidade</th>
+                    <th class="pb-3 font-medium">Tag Manager</th>
+                    <th class="pb-3 font-medium">CRM Detetado</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr class="border-b border-borderGray/50">
+                    <td class="py-3">Gama Solutions</td>
+                    <td class="py-3">
+                      <span class="text-accentBlue">Score 4</span>
+                    </td>
+                    <td class="py-3 text-red-400">Falso</td>
+                    <td class="py-3 text-cyberViolet">HubSpot</td>
+                  </tr>
+                  <tr class="border-b border-borderGray/50">
+                    <td class="py-3">Beta Tech</td>
+                    <td class="py-3">
+                      <span class="text-accentBlue">Score 2</span>
+                    </td>
+                    <td class="py-3 text-cyberViolet">Verdadeiro</td>
+                    <td class="py-3 text-red-400">Nenhum</td>
+                  </tr>
+                  <tr>
+                    <td class="py-3">Omega Inc</td>
+                    <td class="py-3">
+                      <span class="text-accentBlue">Score 3</span>
+                    </td>
+                    <td class="py-3 text-red-400">Falso</td>
+                    <td class="py-3 text-cyberViolet">RD Station</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Seção 5: Encerramento Institucional e Escassez -->
+    <footer class="border-t border-borderGray bg-dark py-12 mt-12">
+      <div class="max-w-4xl mx-auto px-8 text-center">
+        <div
+          class="inline-block bg-surface border border-borderGray rounded-lg p-6 shadow-lg"
+        >
+          <p class="text-white font-medium mb-2">
+            Operações de extração restritas.
+          </p>
+          <p class="text-textGray text-sm mb-4">
+            Garantimos exclusividade territorial de dados para não saturar a
+            conversão dos nossos parceiros ativos.
+          </p>
+          <div class="text-xs font-mono text-borderGray">
+            Polo Operacional: Florianópolis/SC | Arquitetura de Dados &
+            Inteligência B2B
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <!-- CTA Flutuante (WhatsApp) -->
+    <!-- Lembre-se de alterar o 5548999999999 para o seu número real -->
+    <a
+      href="https://wa.me/5548999999999?text=Olá,%20Thayane.%20Analisei%20a%20infraestrutura%20e%20gostaria%20de%20verificar%20a%20disponibilidade%20de%20lotes%20para%20a%20minha%20região."
+      target="_blank"
+      class="fixed bottom-8 right-8 z-50 group flex items-center gap-3 bg-surface border border-borderGray hover:border-cyberViolet p-3 rounded-full shadow-2xl transition-all duration-300 hover:pr-6 cursor-pointer"
+    >
+      <div
+        class="relative flex items-center justify-center w-10 h-10 rounded-full bg-cyberViolet/10 text-cyberViolet"
+      >
+        <span
+          class="absolute top-0 right-0 w-2.5 h-2.5 bg-cyberViolet rounded-full animate-ping"
+        ></span>
+        <span
+          class="absolute top-0 right-0 w-2.5 h-2.5 bg-cyberViolet rounded-full"
+        ></span>
+
+        <svg
+          class="w-5 h-5"
+          fill="none"
+          stroke="currentColor"
+          viewBox="0 0 24 24"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+            d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 8 9 8z"
+          ></path>
+        </svg>
+      </div>
+
+      <span
+        class="max-w-0 overflow-hidden whitespace-nowrap text-sm font-medium text-white group-hover:max-w-xs transition-all duration-500 ease-in-out"
+      >
+        Falar com Thayane – Diretoria Executiva
+      </span>
+    </a>
+  </body>
+</html>
