@@ -30,15 +30,49 @@ O pipeline opera em três módulos sequenciais isolados:
 
 ## 📂 Estrutura de Diretórios
 
-```text
-motor_de_dados_padrao/
-├── config.json               # Matriz de cruzamento (Nichos, Cidades e Blacklist)
-├── main.py                   # Orquestrador principal do pipeline
-├── script/
-│   ├── extracao.py           # Módulo de mineração e API
-│   ├── auditoria.py          # Auditoria de tags e infraestrutura (Polars)
-│   └── disparo_n8n.py        # Gatilho de entrega do dossiê final
-├── dados/
-│   └── historico_b2b.duckdb  # Banco de dados local para quarentena Anti-Join
-├── index.html                # Landing page institucional (trinit-infra)
-└── README.md
+    motor_de_dados_padrao/
+    ├── config.json               # Matriz de cruzamento (Nichos, Cidades e Blacklist)
+    ├── main.py                   # Orquestrador principal do pipeline
+    ├── script/
+    │   ├── extracao.py           # Módulo de mineração e API
+    │   ├── auditoria.py          # Auditoria de tags e infraestrutura (Polars)
+    │   └── disparo_n8n.py        # Gatilho de entrega do dossiê final
+    ├── dados/
+    │   └── historico_b2b.duckdb  # Banco de dados local para quarentena Anti-Join
+    ├── index.html                # Landing page institucional (trinit-infra)
+    └── README.md
+
+---
+
+## 🚀 Como Executar o Pipeline
+
+**1. Configurar a Matriz de Extração**
+Edite o arquivo `config.json` com os nichos e as cidades alvo:
+    {
+      "extracao": {
+        "nichos": ["clínica de estética", "imobiliária alto padrão"],
+        "cidades": ["Florianópolis", "São Paulo"]
+      }
+    }
+
+**2. Iniciar a Esteira**
+No terminal, execute o orquestrador a partir da raiz do projeto:
+    python main.py
+
+**3. Fluxo de Saída**
+O sistema irá:
+1. Minerar os alvos.
+2. Cruzar com a quarentena no `DuckDB`.
+3. Validar a maturidade digital dos leads.
+4. Enviar o `dossie_leads_b2b.xlsx` automaticamente para o Telegram via n8n.
+
+---
+
+## 🛡️ Manifesto Operacional
+
+1. **Engenharia sobre Intuição:** Decisões comerciais exigem dados modelados, não achismos.
+2. **Automação Radical:** O trabalho braçal de limpeza é delegado a scripts.
+3. **Inteligência Acionável:** Entrega de cenários prontos para conversão imediata.
+
+---
+*Desenvolvido e mantido por **Thayane Dröse** | Infraestrutura e Big Data.*
