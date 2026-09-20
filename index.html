@@ -6,7 +6,7 @@
     <title>trinit() | Infraestrutura de Dados B2B</title>
     <meta
       name="description"
-      content="trinit() é uma infraestrutura de dados B2B para prospecção: varremos mercados, identificamos empresas com falhas de rastreamento e entregamos dossiês prontos para abordar."
+      content="Mapeamos o seu território, aplicamos filtros estratégicos de prospecção e entregamos as empresas que mais combinam com o serviço da sua agência. Comece com uma amostra grátis."
     />
     <meta name="theme-color" content="#0D1117" />
     <meta property="og:type" content="website" />
@@ -17,9 +17,9 @@
     />
     <meta
       property="og:description"
-      content="Varremos mercados, identificamos empresas com falhas de rastreamento e entregamos dossiês prontos para a sua equipe abordar."
+      content="Saiba quais empresas da sua região precisam de posicionamento e marketing digital. Comece com uma amostra grátis."
     />
-    <!-- AJUSTE: suba trinit-logo-300.png na raiz do projeto (favicon e preview de link) -->
+    <!-- AJUSTE: suba trinit-logo-300.png na mesma pasta do index.html -->
     <meta
       property="og:image"
       content="https://trinit-b2b.vercel.app/trinit-logo-300.png"
@@ -64,20 +64,33 @@
     </style>
   </head>
   <body class="bg-dark text-white font-sans antialiased">
+    <!-- Navegação -->
     <nav
-      class="border-b border-borderGray px-8 py-4 flex justify-between items-center"
+      class="border-b border-borderGray px-6 sm:px-8 py-4 flex justify-between items-center"
     >
       <div class="font-mono text-sm font-bold tracking-tight">
         <span class="text-cyberViolet">~</span> trinit()
       </div>
-      <div class="text-xs text-textGray font-mono">
-        V 1.0.0 | STATUS: <span class="text-cyberViolet">ONLINE</span>
+      <div class="flex items-center gap-6 text-xs font-mono text-textGray">
+        <a href="#servicos" class="hidden sm:inline hover:text-white"
+          >Serviços</a
+        >
+        <a href="#como-funciona" class="hidden sm:inline hover:text-white"
+          >Como funciona</a
+        >
+        <a href="#planos" class="hidden sm:inline hover:text-white">Planos</a>
+        <a
+          href="#contato"
+          data-wa="Olá, Thayane. Quero receber a amostra grátis da minha região."
+          class="text-cyberViolet hover:text-white"
+          >Amostra grátis</a
+        >
       </div>
     </nav>
 
     <!-- Hero -->
     <main
-      class="max-w-7xl mx-auto px-8 py-24 grid lg:grid-cols-2 gap-16 items-center"
+      class="max-w-7xl mx-auto px-6 sm:px-8 py-20 lg:py-24 grid lg:grid-cols-2 gap-12 lg:gap-16 items-center"
     >
       <div>
         <div
@@ -86,42 +99,41 @@
           <span
             class="w-2 h-2 rounded-full bg-cyberViolet animate-pulse motion-reduce:animate-none"
           ></span>
-          <span class="text-xs font-mono text-textGray">PIPELINE ATIVO</span>
+          <span class="text-xs font-mono text-textGray"
+            >Para agências de marketing digital</span
+          >
         </div>
 
         <h1 class="text-4xl lg:text-5xl font-semibold leading-tight mb-6">
-          Chegue primeiro em quem já tem o problema que você resolve.
+          Saiba quais empresas da sua região precisam de posicionamento e
+          marketing digital.
         </h1>
 
         <p class="text-lg text-textGray mb-8 leading-relaxed">
-          Operações de outbound queimam caixa validando listas sujas. Varremos o
-          mercado da sua região, identificamos empresas com falhas de
-          rastreamento e entregamos o dossiê pronto para a sua equipe abordar.
+          Mapeamos o seu território, aplicamos filtros estratégicos de
+          prospecção e entregamos as empresas que mais combinam com o serviço da
+          sua agência.
         </p>
 
-        <div class="flex flex-wrap gap-3 mb-8">
+        <div class="flex flex-wrap gap-3 mb-4">
           <a
-            href="https://wa.me/5548991623872?text=Ol%C3%A1,%20Thayane.%20Analisei%20a%20infraestrutura%20e%20gostaria%20de%20verificar%20a%20disponibilidade%20de%20lotes%20para%20a%20minha%20regi%C3%A3o."
-            target="_blank"
-            rel="noopener noreferrer"
+            href="#contato"
+            data-wa="Olá, Thayane. Quero receber a amostra grátis da minha região."
             class="btn bg-cyberViolet text-dark hover:bg-purple-400"
           >
-            Verificar disponibilidade na minha região
+            Receber amostra grátis
           </a>
 
           <a
-            href="#dossie"
+            href="#como-funciona"
             class="btn border border-borderGray text-white hover:border-cyberViolet"
           >
-            Ver dossiê de exemplo
+            Ver como funciona
           </a>
         </div>
-
-        <div
-          class="text-sm font-mono text-textGray border-l-2 border-borderGray pl-4"
-        >
-          &gt; Infraestrutura operando com alocação territorial restrita.
-        </div>
+        <p class="text-sm text-textGray">
+          Sem compromisso: você conhece o nosso trabalho antes de comprar.
+        </p>
       </div>
 
       <div
@@ -140,335 +152,430 @@
             aria-hidden="true"
           ></div>
           <span class="ml-auto text-xs font-mono text-textGray"
-            >exemplo ilustrativo</span
+            >amostra_exemplo.xlsx</span
           >
         </div>
-        <div class="p-6 font-mono text-sm text-textGray space-y-2">
-          <p>
-            <span class="text-accentBlue">user@server:~$</span> python
-            executar_pipeline.py --alvo "b2b"
-          </p>
-          <p class="text-white">
-            [INFO] Iniciando varredura georreferenciada...
-          </p>
-          <p>
-            [PROCESSANDO] Extraindo domínios na região de Florianópolis/SC...
-          </p>
-          <p>
-            [AUDITORIA] Mapeando infraestrutura comercial e gargalos técnicos...
-          </p>
-          <p class="text-cyberViolet">
-            [SUCESSO] 147 anomalias detectadas. Dossiê gerado.
-          </p>
-          <p
-            class="animate-pulse motion-reduce:animate-none"
+        <div class="relative">
+          <div class="p-4 sm:p-6 overflow-x-auto">
+            <table class="w-full text-left font-mono text-xs text-textGray">
+              <thead>
+                <tr class="text-white border-b border-borderGray">
+                  <th class="pb-3 pr-3 font-medium">Empresa</th>
+                  <th class="pb-3 pr-3 font-medium">Site</th>
+                  <th class="pb-3 pr-3 font-medium">WhatsApp</th>
+                  <th class="pb-3 pr-3 font-medium">Pixel</th>
+                  <th class="pb-3 pr-3 font-medium">GTM</th>
+                  <th
+                    aria-hidden="true"
+                    class="pb-3 pr-3 font-medium blur-sm select-none"
+                  >
+                    Filtro 5
+                  </th>
+                  <th
+                    aria-hidden="true"
+                    class="pb-3 pr-3 font-medium blur-sm select-none"
+                  >
+                    Filtro 6
+                  </th>
+                  <th
+                    aria-hidden="true"
+                    class="pb-3 pr-3 font-medium blur-sm select-none"
+                  >
+                    Filtro 7
+                  </th>
+                  <th
+                    aria-hidden="true"
+                    class="pb-3 font-medium blur-sm select-none"
+                  >
+                    Filtro 8
+                  </th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr class="border-b border-borderGray/50">
+                  <td class="py-3 pr-3 whitespace-nowrap">Clínica Alfa</td>
+                  <td class="py-3 pr-3 text-cyberViolet">Sim</td>
+                  <td class="py-3 pr-3 text-cyberViolet">Sim</td>
+                  <td class="py-3 pr-3 text-red-400">Não</td>
+                  <td class="py-3 pr-3 text-red-400">Não</td>
+                  <td aria-hidden="true" class="py-3 pr-3 blur-sm select-none">
+                    Sim
+                  </td>
+                  <td aria-hidden="true" class="py-3 pr-3 blur-sm select-none">
+                    Não
+                  </td>
+                  <td aria-hidden="true" class="py-3 pr-3 blur-sm select-none">
+                    Sim
+                  </td>
+                  <td aria-hidden="true" class="py-3 blur-sm select-none">
+                    Sim
+                  </td>
+                </tr>
+                <tr class="border-b border-borderGray/50">
+                  <td class="py-3 pr-3 whitespace-nowrap">Studio Beta</td>
+                  <td class="py-3 pr-3 text-cyberViolet">Sim</td>
+                  <td class="py-3 pr-3 text-cyberViolet">Sim</td>
+                  <td class="py-3 pr-3 text-red-400">Não</td>
+                  <td class="py-3 pr-3 text-red-400">Não</td>
+                  <td aria-hidden="true" class="py-3 pr-3 blur-sm select-none">
+                    Não
+                  </td>
+                  <td aria-hidden="true" class="py-3 pr-3 blur-sm select-none">
+                    Sim
+                  </td>
+                  <td aria-hidden="true" class="py-3 pr-3 blur-sm select-none">
+                    Sim
+                  </td>
+                  <td aria-hidden="true" class="py-3 blur-sm select-none">
+                    Não
+                  </td>
+                </tr>
+                <tr class="border-b border-borderGray/50">
+                  <td class="py-3 pr-3 whitespace-nowrap">Construtora Gama</td>
+                  <td class="py-3 pr-3 text-cyberViolet">Sim</td>
+                  <td class="py-3 pr-3 text-cyberViolet">Sim</td>
+                  <td class="py-3 pr-3 text-cyberViolet">Sim</td>
+                  <td class="py-3 pr-3 text-red-400">Não</td>
+                  <td aria-hidden="true" class="py-3 pr-3 blur-sm select-none">
+                    Sim
+                  </td>
+                  <td aria-hidden="true" class="py-3 pr-3 blur-sm select-none">
+                    Sim
+                  </td>
+                  <td aria-hidden="true" class="py-3 pr-3 blur-sm select-none">
+                    Não
+                  </td>
+                  <td aria-hidden="true" class="py-3 blur-sm select-none">
+                    Sim
+                  </td>
+                </tr>
+                <tr
+                  aria-hidden="true"
+                  class="border-b border-borderGray/50 blur-sm select-none"
+                >
+                  <td class="py-3 pr-3 whitespace-nowrap">Empresa Delta</td>
+                  <td class="py-3 pr-3">Sim</td>
+                  <td class="py-3 pr-3">Sim</td>
+                  <td class="py-3 pr-3">Não</td>
+                  <td class="py-3 pr-3">Não</td>
+                  <td class="py-3 pr-3">Sim</td>
+                  <td class="py-3 pr-3">Não</td>
+                  <td class="py-3 pr-3">Sim</td>
+                  <td class="py-3">Não</td>
+                </tr>
+                <tr aria-hidden="true" class="blur-sm select-none">
+                  <td class="py-3 pr-3 whitespace-nowrap">Empresa Ômega</td>
+                  <td class="py-3 pr-3">Sim</td>
+                  <td class="py-3 pr-3">Sim</td>
+                  <td class="py-3 pr-3">Não</td>
+                  <td class="py-3 pr-3">Não</td>
+                  <td class="py-3 pr-3">Não</td>
+                  <td class="py-3 pr-3">Sim</td>
+                  <td class="py-3 pr-3">Não</td>
+                  <td class="py-3">Sim</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <div
+            class="pointer-events-none absolute inset-y-0 right-0 w-24 bg-gradient-to-l from-surface to-transparent"
             aria-hidden="true"
-          >
-            _
-          </p>
+          ></div>
         </div>
+        <p class="px-4 sm:px-6 pb-4 sm:pb-6 text-xs font-mono text-textGray">
+          Exemplo ilustrativo, com dados fictícios. Há mais critérios
+          disponíveis.
+        </p>
       </div>
     </main>
 
-    <!-- Antes e depois -->
-    <section id="dossie" class="border-t border-borderGray bg-surface py-24">
-      <div class="max-w-7xl mx-auto px-8">
-        <div class="mb-12">
-          <h2 class="text-3xl font-semibold mb-4">
-            Da base bruta ao dossiê pronto para abordar.
-          </h2>
-          <p class="text-textGray">
-            O tempo da sua equipe deve ser investido em negociação, não na
-            higienização manual de linhas. Cada linha do dossiê indica o gancho
-            de abordagem.
-          </p>
-        </div>
-
-        <div class="grid lg:grid-cols-5 gap-8">
-          <div
-            class="lg:col-span-2 border border-borderGray rounded-xl bg-dark overflow-hidden"
-          >
-            <div
-              class="bg-red-500/10 border-b border-red-500/20 px-4 py-2 font-mono text-xs text-red-400"
-            >
-              base_bruta_desordenada.csv (Antes)
-            </div>
-            <pre class="p-6 font-mono text-xs text-textGray overflow-x-auto">
-nome_empresa,contato,site,erro
-Clinica Alpha,n/a,http://...,ERR_TIMEOUT
-Beta Tech,(48)999...,n/a,null
-Gama Solutions,contato@...,http://...,null
-Delta SA,null,null,ERR_CONNECTION_REFUSED
-Omega Inc,sac@...,http://omega...,null</pre
-            >
-          </div>
-
-          <div
-            class="lg:col-span-3 border border-borderGray rounded-xl bg-dark overflow-hidden shadow-lg shadow-cyberViolet/5"
-          >
-            <div
-              class="bg-cyberViolet/10 border-b border-cyberViolet/20 px-4 py-2 font-mono text-xs text-cyberViolet"
-            >
-              dossie_b2b_enriquecido.xlsx (Depois)
-            </div>
-            <div class="p-6 overflow-x-auto">
-              <table class="w-full text-left font-mono text-xs text-textGray">
-                <thead>
-                  <tr class="text-white border-b border-borderGray">
-                    <th class="pb-3 pr-4 font-medium">Empresa</th>
-                    <!-- AJUSTE: defina a escala real do score de maturidade -->
-                    <th class="pb-3 pr-4 font-medium">Maturidade (1–5)</th>
-                    <th class="pb-3 pr-4 font-medium">Tag Manager</th>
-                    <th class="pb-3 pr-4 font-medium">CRM detectado</th>
-                    <th class="pb-3 font-medium">Gancho de abordagem</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr class="border-b border-borderGray/50 align-top">
-                    <td class="py-3 pr-4 whitespace-nowrap">Gama Solutions</td>
-                    <td class="py-3 pr-4">
-                      <span class="text-accentBlue">4</span>
-                    </td>
-                    <td class="py-3 pr-4 text-red-400">Não</td>
-                    <td class="py-3 pr-4 text-cyberViolet">HubSpot</td>
-                    <td class="py-3">Rastreamento e integração com HubSpot</td>
-                  </tr>
-                  <tr class="border-b border-borderGray/50 align-top">
-                    <td class="py-3 pr-4 whitespace-nowrap">Beta Tech</td>
-                    <td class="py-3 pr-4">
-                      <span class="text-accentBlue">2</span>
-                    </td>
-                    <td class="py-3 pr-4 text-cyberViolet">Sim</td>
-                    <td class="py-3 pr-4 text-red-400">Nenhum</td>
-                    <td class="py-3">Implantação de CRM</td>
-                  </tr>
-                  <tr class="align-top">
-                    <td class="py-3 pr-4 whitespace-nowrap">Omega Inc</td>
-                    <td class="py-3 pr-4">
-                      <span class="text-accentBlue">3</span>
-                    </td>
-                    <td class="py-3 pr-4 text-red-400">Não</td>
-                    <td class="py-3 pr-4 text-cyberViolet">RD Station</td>
-                    <td class="py-3">
-                      Rastreamento e integração com RD Station
-                    </td>
-                  </tr>
-                </tbody>
-              </table>
-            </div>
-          </div>
-        </div>
-        <p class="mt-6 text-xs font-mono text-textGray">
-          Exemplo ilustrativo com dados fictícios.
+    <!-- Serviços -->
+    <section
+      id="servicos"
+      class="border-t border-borderGray bg-dark py-20 lg:py-24"
+    >
+      <div class="max-w-7xl mx-auto px-6 sm:px-8">
+        <h2 class="text-3xl font-semibold mb-4">Nossos três serviços.</h2>
+        <p class="text-textGray mb-12">
+          Cada serviço funciona sozinho. Juntos, formam um motor completo de
+          prospecção.
         </p>
-      </div>
-    </section>
-
-    <!-- Tese e módulos -->
-    <section class="border-t border-borderGray bg-dark py-24">
-      <div class="max-w-7xl mx-auto px-8">
-        <div class="text-center max-w-3xl mx-auto mb-16">
-          <h2 class="text-3xl font-semibold mb-6">
-            O mercado opera na superfície. Nós operamos na infraestrutura.
-          </h2>
-          <p class="text-textGray text-lg">
-            Não vendemos listas estáticas de CNPJs. Mapeamos empresas
-            consolidadas que operam com deficiências graves de rastreamento e
-            entregamos essa inteligência para a sua equipe comercial agir.
-          </p>
-        </div>
-
         <div class="grid md:grid-cols-3 gap-8">
           <div class="card">
             <div class="text-cyberViolet font-mono text-sm mb-1">
               &gt;_ trinit().signals
             </div>
             <div class="text-white font-medium text-lg mb-4">
-              Varredura Georreferenciada
+              Inteligência sob medida
             </div>
             <p class="text-textGray text-sm leading-relaxed">
-              Coleta e auditoria sistemática de dados de empresas em polos
-              selecionados e ecossistemas de tecnologia.
+              Arquitetura de busca sob medida. Traduzimos os critérios de
+              qualificação da sua operação em regras de código. Injetamos os
+              seus filtros de ICP no nosso motor para extrair uma base modelada
+              exclusivamente para o seu cenário.
             </p>
           </div>
-
           <div class="card">
             <div class="text-cyberViolet font-mono text-sm mb-1">
               &gt;_ trinit().clean
             </div>
             <div class="text-white font-medium text-lg mb-4">
-              Higienização &amp; Modelagem
+              Higienização da sua base
             </div>
             <p class="text-textGray text-sm leading-relaxed">
-              Mapeamento de fricção e exclusão sumária de dados corrompidos,
-              empresas inativas ou sem infraestrutura digital.
+              Limpamos a sua base de contatos: removemos dados incorretos,
+              empresas inativas e cadastros sem presença digital, para a sua
+              equipe prospectar só o que é válido.
             </p>
           </div>
-
           <div class="card">
             <div class="text-cyberViolet font-mono text-sm mb-1">
               &gt;_ trinit().data
             </div>
             <div class="text-white font-medium text-lg mb-4">
-              Dossiê Executivo
+              Extração estruturada
             </div>
             <p class="text-textGray text-sm leading-relaxed">
-              Estruturação final das oportunidades em dados limpos, formatados
-              para ingestão direta e conversão pela sua equipe de outbound.
+              Extração estruturada de empresas da sua região. Base higienizada,
+              enriquecida com sinais de infraestrutura digital e validada,
+              pronta para ingestão direta no seu CRM e acionamento pelos BDRs.
             </p>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- Como contratar -->
-    <section id="contratar" class="border-t border-borderGray bg-surface py-24">
-      <div class="max-w-7xl mx-auto px-8">
+    <!-- Como funciona -->
+    <section
+      id="como-funciona"
+      class="border-t border-borderGray bg-surface py-20 lg:py-24"
+    >
+      <div class="max-w-7xl mx-auto px-6 sm:px-8">
+        <div class="text-cyberViolet font-mono text-sm mb-2">
+          &gt;_ trinit().signals
+        </div>
         <h2 class="text-3xl font-semibold mb-12">
-          Como funciona a contratação.
+          Do seu território ao seu dossiê, em três passos.
         </h2>
         <div class="grid md:grid-cols-3 gap-8">
           <div class="card bg-dark">
             <div class="text-cyberViolet font-mono text-sm mb-1">Passo 1</div>
             <div class="text-white font-medium text-lg mb-4">
-              Escolha o território
+              Você define o território
             </div>
             <p class="text-textGray text-sm leading-relaxed">
-              Cidade ou polo de atuação, como Florianópolis/SC. Cada território
-              tem alocação restrita.
+              Escolha a cidade, a região ou o nicho e traga os critérios da
+              estratégia do seu time de vendas, como o perfil de cliente que
+              vocês querem abordar.
             </p>
           </div>
           <div class="card bg-dark">
             <div class="text-cyberViolet font-mono text-sm mb-1">Passo 2</div>
             <div class="text-white font-medium text-lg mb-4">
-              Nós varremos e modelamos
+              Nós fazemos a busca
             </div>
             <p class="text-textGray text-sm leading-relaxed">
-              Varredura, higienização e modelagem rodam de forma automatizada, e
-              o resultado chega em planilha.
+              Nossos robôs varrem o território, aplicam os nossos filtros junto
+              com os seus critérios e validam cada empresa. Sobram só as que
+              realmente se encaixam.
             </p>
           </div>
           <div class="card bg-dark">
             <div class="text-cyberViolet font-mono text-sm mb-1">Passo 3</div>
             <div class="text-white font-medium text-lg mb-4">
-              Sua equipe aborda com contexto
+              Você recebe e valida
             </div>
             <p class="text-textGray text-sm leading-relaxed">
-              Cada empresa vem com o gancho de abordagem, pronta para o
-              outbound.
+              Valide o dossiê e converta os dados em clientes para a sua
+              agência.
             </p>
           </div>
         </div>
-        <!-- AJUSTE: detalhe aqui tamanho do lote, prazo e formato de entrega -->
-        <p class="mt-8 text-sm text-textGray">
-          Tamanho do lote, prazo e condições: fale com a diretoria pelo
-          WhatsApp.
+      </div>
+    </section>
+
+    <!-- Diferença -->
+    <section class="border-t border-borderGray bg-dark py-20 lg:py-24">
+      <div class="max-w-5xl mx-auto px-6 sm:px-8">
+        <h2 class="text-3xl font-semibold mb-12">
+          Por que isso não é uma lista comum.
+        </h2>
+        <div class="grid md:grid-cols-2 gap-8">
+          <div class="bg-surface border border-borderGray rounded-xl p-8">
+            <div class="font-mono text-sm text-textGray mb-5">Lista comum</div>
+            <ul class="space-y-4 text-textGray text-sm leading-relaxed">
+              <li class="flex gap-3">
+                <span class="text-red-400" aria-hidden="true">✗</span>
+                <span>Contatos aleatórios, sem critério de prospecção.</span>
+              </li>
+              <li class="flex gap-3">
+                <span class="text-red-400" aria-hidden="true">✗</span>
+                <span>Você não sabe por que abordar cada empresa.</span>
+              </li>
+              <li class="flex gap-3">
+                <span class="text-red-400" aria-hidden="true">✗</span>
+                <span>A mesma lista serve para qualquer agência.</span>
+              </li>
+            </ul>
+          </div>
+          <div
+            class="bg-surface border border-cyberViolet rounded-xl p-8 shadow-lg shadow-cyberViolet/5"
+          >
+            <div class="font-mono text-sm text-cyberViolet mb-5">trinit()</div>
+            <ul class="space-y-4 text-white text-sm leading-relaxed">
+              <li class="flex gap-3">
+                <span class="text-cyberViolet" aria-hidden="true">✓</span>
+                <span>Empresas escolhidas por filtros estratégicos.</span>
+              </li>
+              <li class="flex gap-3">
+                <span class="text-cyberViolet" aria-hidden="true">✓</span>
+                <span>Cada empresa vem com o motivo para abordar.</span>
+              </li>
+              <li class="flex gap-3">
+                <span class="text-cyberViolet" aria-hidden="true">✓</span>
+                <span>Empresas que não se repetem entre lotes.</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Planos -->
+    <section
+      id="planos"
+      class="border-t border-borderGray bg-surface py-20 lg:py-24"
+    >
+      <div class="max-w-7xl mx-auto px-6 sm:px-8">
+        <div class="text-cyberViolet font-mono text-sm mb-2">
+          &gt;_ trinit().data
+        </div>
+        <h2 class="text-3xl font-semibold mb-12">
+          Comece grátis e escolha como continuar.
+        </h2>
+
+        <div class="grid md:grid-cols-3 gap-8">
+          <div class="card bg-dark flex flex-col">
+            <div class="text-cyberViolet font-mono text-sm mb-1">
+              Para testar
+            </div>
+            <div class="text-white font-semibold text-xl mb-4">
+              Amostra grátis
+            </div>
+            <p class="text-textGray text-sm leading-relaxed mb-8">
+              Receba uma amostra do dossiê do seu território e conheça a
+              qualidade do nosso trabalho, sem compromisso.
+            </p>
+            <div class="mt-auto">
+              <a
+                href="#contato"
+                data-wa="Olá, Thayane. Quero receber a amostra grátis da minha região."
+                class="btn w-full border border-borderGray text-white hover:border-cyberViolet"
+              >
+                Quero a amostra
+              </a>
+            </div>
+          </div>
+
+          <div class="card bg-dark flex flex-col">
+            <div class="text-cyberViolet font-mono text-sm mb-1">
+              Para comprar uma vez
+            </div>
+            <div class="text-white font-semibold text-xl mb-4">Lote avulso</div>
+            <p class="text-textGray text-sm leading-relaxed mb-4">
+              Um lote de empresas do seu território para a sua equipe abordar.
+              Compra única, sem mensalidade.
+            </p>
+            <p class="text-xs font-mono text-textGray mb-8">
+              Valor conforme o volume disponível na região.
+            </p>
+            <div class="mt-auto">
+              <a
+                href="#contato"
+                data-wa="Olá, Thayane. Quero saber como comprar um lote avulso."
+                class="btn w-full border border-borderGray text-white hover:border-cyberViolet"
+              >
+                Comprar um lote
+              </a>
+            </div>
+          </div>
+
+          <div
+            class="card bg-dark flex flex-col border-cyberViolet shadow-lg shadow-cyberViolet/5"
+          >
+            <div class="text-cyberViolet font-mono text-sm mb-1">
+              Para ter o território só seu
+            </div>
+            <div class="text-white font-semibold text-xl mb-4">
+              Assinatura com exclusividade
+            </div>
+            <p class="text-textGray text-sm leading-relaxed mb-4">
+              Você reserva um território ou nicho e recebe novas listas todo
+              mês. Enquanto a assinatura estiver ativa, o território fica
+              reservado só para a sua agência.
+            </p>
+            <p class="text-xs font-mono text-textGray mb-8">
+              Valor conforme o volume disponível na região.
+            </p>
+            <div class="mt-auto">
+              <a
+                href="#contato"
+                data-wa="Olá, Thayane. Quero saber sobre a assinatura com exclusividade na minha região."
+                class="btn w-full bg-cyberViolet text-dark hover:bg-purple-400"
+              >
+                Reservar meu território
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <p class="mt-10 text-sm text-textGray">
+          Só precisa limpar a sua própria base? Também fazemos higienização de
+          listas B2B.
+
+          <a
+            href="#contato"
+            data-wa="Olá, Thayane. Gostaria de saber mais sobre a higienização de base B2B."
+            class="text-cyberViolet hover:text-white underline underline-offset-4"
+          >
+            Falar sobre higienização
+          </a>
         </p>
       </div>
     </section>
 
-    <!-- Higienização (produto separado) -->
-    <section id="higienizacao" class="border-t border-borderGray bg-dark py-24">
-      <div class="max-w-4xl mx-auto px-8">
-        <div
-          class="bg-surface border border-borderGray rounded-xl p-8 flex flex-col md:flex-row md:items-center justify-between gap-6"
-        >
-          <div>
-            <div class="text-cyberViolet font-mono text-sm mb-1">
-              &gt;_ trinit().clean
-            </div>
-            <h2 class="text-2xl font-semibold mb-2">
-              Só precisa limpar a base?
-            </h2>
-            <p class="text-textGray text-sm leading-relaxed">
-              Higienização de base B2B: removemos dados corrompidos, empresas
-              inativas e cadastros sem infraestrutura digital antes do seu
-              próximo disparo, para a sua equipe prospectar só o que é válido.
-            </p>
-          </div>
-          <!-- AJUSTE: troque pelo link da página própria quando ela existir -->
+    <!-- Contato -->
+    <section
+      id="contato"
+      class="border-t border-borderGray bg-dark py-20 lg:py-24 pb-32"
+    >
+      <div class="max-w-3xl mx-auto px-6 sm:px-8 text-center">
+        <h2 class="text-3xl font-semibold mb-4">
+          Vamos ver o que tem na sua região?
+        </h2>
+        <p class="text-textGray mb-8 leading-relaxed">
+          Atuamos hoje em Florianópolis/SC. Fale com a diretoria e peça a
+          amostra do seu território.
+        </p>
 
-          <a
-            href="https://wa.me/5548991623872?text=Ol%C3%A1,%20Thayane.%20Gostaria%20de%20saber%20mais%20sobre%20a%20higieniza%C3%A7%C3%A3o%20de%20base%20B2B."
-            target="_blank"
-            rel="noopener noreferrer"
-            class="btn border border-borderGray text-white hover:border-cyberViolet shrink-0"
-          >
-            Falar sobre higienização
-          </a>
+        <a
+          href="#contato"
+          data-wa="Olá, Thayane. Vim pelo site e gostaria de verificar a disponibilidade para a minha região."
+          class="btn bg-cyberViolet text-dark hover:bg-purple-400"
+        >
+          Pedir amostra pelo WhatsApp
+        </a>
+        <div class="mt-12 text-xs font-mono text-textGray">
+          trinit() · Infraestrutura de dados B2B · Florianópolis/SC
         </div>
       </div>
     </section>
-
-    <!-- Manifesto -->
-    <section class="border-t border-borderGray bg-surface py-20">
-      <div class="max-w-7xl mx-auto px-8 grid lg:grid-cols-4 gap-12">
-        <div class="lg:col-span-1">
-          <h2 class="text-xs font-mono text-cyberViolet mb-2">
-            /MANIFESTO_OPERACIONAL
-          </h2>
-          <h3 class="text-2xl font-semibold">Nossos princípios.</h3>
-        </div>
-
-        <div class="lg:col-span-3 grid md:grid-cols-3 gap-8">
-          <div
-            class="border-l border-borderGray pl-6 hover:border-cyberViolet transition-colors duration-300"
-          >
-            <h4 class="text-white font-medium mb-3">
-              Engenharia sobre intuição
-            </h4>
-            <p class="text-textGray text-sm leading-relaxed">
-              Cada abordagem parte de um dado verificável, não de um palpite.
-            </p>
-          </div>
-          <div
-            class="border-l border-borderGray pl-6 hover:border-cyberViolet transition-colors duration-300"
-          >
-            <h4 class="text-white font-medium mb-3">Automação radical</h4>
-            <p class="text-textGray text-sm leading-relaxed">
-              A busca e a filtragem de contatos rodam sozinhas. Sua equipe só
-              negocia.
-            </p>
-          </div>
-          <div
-            class="border-l border-borderGray pl-6 hover:border-cyberViolet transition-colors duration-300"
-          >
-            <h4 class="text-white font-medium mb-3">Inteligência acionável</h4>
-            <p class="text-textGray text-sm leading-relaxed">
-              Cada empresa chega com o motivo da abordagem já anotado.
-            </p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Encerramento -->
-    <footer class="border-t border-borderGray bg-dark pt-12 pb-28">
-      <div class="max-w-4xl mx-auto px-8 text-center">
-        <div
-          class="inline-block bg-surface border border-borderGray rounded-lg p-6 shadow-lg"
-        >
-          <p class="text-white font-medium mb-2">
-            Operações de extração restritas.
-          </p>
-          <p class="text-textGray text-sm mb-4">
-            Garantimos exclusividade territorial de dados para não saturar a
-            conversão dos nossos parceiros ativos.
-          </p>
-          <div class="text-xs font-mono text-textGray">
-            Polo Operacional: Florianópolis/SC | Infraestrutura de dados B2B
-          </div>
-        </div>
-        <!-- AJUSTE: adicione link para a Política de Privacidade e uma frase sobre as fontes dos dados (valide com especialista em LGPD) -->
-      </div>
-    </footer>
 
     <!-- CTA flutuante (WhatsApp) -->
 
     <a
-      href="https://wa.me/5548991623872?text=Ol%C3%A1,%20Thayane.%20Analisei%20a%20infraestrutura%20e%20gostaria%20de%20verificar%20a%20disponibilidade%20de%20lotes%20para%20a%20minha%20regi%C3%A3o."
-      target="_blank"
-      rel="noopener noreferrer"
+      href="#contato"
+      data-wa="Olá, Thayane. Vim pelo site e gostaria de verificar a disponibilidade para a minha região."
       aria-label="Falar com Thayane – Diretoria Executiva pelo WhatsApp"
       class="fixed bottom-8 right-8 z-50 group flex items-center gap-3 bg-surface border border-borderGray hover:border-cyberViolet focus-visible:border-cyberViolet p-3 rounded-full shadow-2xl transition-all duration-300 hover:pr-6 cursor-pointer"
     >
@@ -503,5 +610,15 @@ Omega Inc,sac@...,http://omega...,null</pre
         Falar com Thayane – Diretoria Executiva
       </span>
     </a>
+
+    <script>
+      // Número único do WhatsApp: altere só aqui.
+      const WHATSAPP = "5548991623872";
+      document.querySelectorAll("[data-wa]").forEach((a) => {
+        a.href = `https://wa.me/${WHATSAPP}?text=${encodeURIComponent(a.dataset.wa)}`;
+        a.target = "_blank";
+        a.rel = "noopener noreferrer";
+      });
+    </script>
   </body>
 </html>
