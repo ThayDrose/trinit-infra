@@ -588,13 +588,20 @@
           Vamos ver o que tem na sua região?
         </h2>
         <p class="text-textGray mb-8 leading-relaxed">
-          Insira o e-mail corporativo da agência abaixo para desbloquear a
-          amostra do seu território.
+          Insira os dados da agência abaixo para desbloquear a
+          amostra do seu território em tempo real.
         </p>
 
         <!-- Formulário de Captura | trinit() integrado ao n8n -->
         <div id="captura-trinit" class="max-w-md mx-auto">
           <form id="leadForm" class="flex flex-col gap-3">
+            <input
+              type="text"
+              id="nome"
+              placeholder="Seu Nome"
+              required
+              class="w-full bg-surface border border-borderGray text-white placeholder-textGray rounded-lg px-5 py-3 focus:outline-none focus:border-cyberViolet transition-colors duration-300"
+            />
             <input
               type="email"
               id="email"
@@ -602,9 +609,23 @@
               required
               class="w-full bg-surface border border-borderGray text-white placeholder-textGray rounded-lg px-5 py-3 focus:outline-none focus:border-cyberViolet transition-colors duration-300"
             />
+            <input
+              type="text"
+              id="nicho"
+              placeholder="Nicho (Ex: Clínicas Odontológicas)"
+              required
+              class="w-full bg-surface border border-borderGray text-white placeholder-textGray rounded-lg px-5 py-3 focus:outline-none focus:border-cyberViolet transition-colors duration-300"
+            />
+            <input
+              type="text"
+              id="cidade"
+              placeholder="Cidade / Região (Ex: Florianópolis - SC)"
+              required
+              class="w-full bg-surface border border-borderGray text-white placeholder-textGray rounded-lg px-5 py-3 focus:outline-none focus:border-cyberViolet transition-colors duration-300"
+            />
             <button
               type="submit"
-              class="btn w-full bg-cyberViolet text-dark hover:bg-purple-400 transition-colors duration-300 text-base py-3"
+              class="btn w-full bg-cyberViolet text-dark hover:bg-purple-400 transition-colors duration-300 text-base py-3 mt-2"
             >
               Solicitar Amostra Grátis
             </button>
@@ -613,7 +634,7 @@
               class="hidden text-green-500 mt-2 text-sm font-mono text-center font-medium"
             >
               ✓ Solicitação recebida! O motor foi acionado e enviaremos a
-              amostra em até 24 horas.
+              amostra em até 15 minutos.
             </p>
           </form>
         </div>
@@ -724,20 +745,31 @@
 
           const btn = e.target.querySelector("button");
           const statusMsg = document.getElementById("statusMsg");
+          
+          // Captura dos novos campos adicionados
+          const nomeInput = document.getElementById("nome").value;
           const emailInput = document.getElementById("email").value;
+          const nichoInput = document.getElementById("nicho").value;
+          const cidadeInput = document.getElementById("cidade").value;
 
           // Estado de carregamento
           btn.innerText = "Processando...";
           btn.disabled = true;
           btn.classList.add("opacity-70");
 
+          // Novo payload estruturado para alimentar o motor
           const payload = {
+            nome: nomeInput,
             email: emailInput,
+            nicho: nichoInput,
+            cidade: cidadeInput,
             origem: "Landing Page Trinit - Seção Contato",
             data_captura: new Date().toISOString(),
           };
 
           try {
+            // Mantive a sua URL de teste do webhook para não quebrar sua esteira atual.
+            // Quando for lançar oficialmente, troque "webhook-test" por "webhook" e ative o workflow.
             await fetch(
               "https://thaydrose.app.n8n.cloud/webhook-test/e4d75ee6-4702-4246-8fef-eeff309c3e65",
               {
