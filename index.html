@@ -717,7 +717,7 @@
       </span>
     </a>
 
-    <script>
+<script>
       // Número único do WhatsApp: altere só aqui.
       const WHATSAPP = "5548991623872";
       document.querySelectorAll("[data-wa]").forEach((a) => {
@@ -730,44 +730,66 @@
       const backToTopBtn = document.getElementById("backToTop");
       window.addEventListener("scroll", () => {
         if (window.scrollY > 400) {
-          backToTopBtn.classList.remove(
-            "opacity-0",
-            "pointer-events-none",
-            "translate-y-4",
-          );
+          backToTopBtn.classList.remove("opacity-0", "pointer-events-none", "translate-y-4");
           backToTopBtn.classList.add("opacity-100", "translate-y-0");
         } else {
-          backToTopBtn.classList.add(
-            "opacity-0",
-            "pointer-events-none",
-            "translate-y-4",
-          );
+          backToTopBtn.classList.add("opacity-0", "pointer-events-none", "translate-y-4");
           backToTopBtn.classList.remove("opacity-100", "translate-y-0");
         }
       });
 
-      // Feedback Visual do Formulário Nativo
+      // Integração em Background com n8n (Bypass de CORS)
       const form = document.getElementById("leadForm");
       if (form) {
-        form.addEventListener("submit", function () {
+        form.addEventListener("submit", async function (e) {
+          e.preventDefault(); // Trava a página para o usuário não ser redirecionado para a tela preta
+
           const btn = form.querySelector("button");
           const statusMsg = document.getElementById("statusMsg");
 
-          // Feedback visual imediato
+          // Captura dos campos
+          const nomeInput = document.getElementById("nome").value;
+          const emailInput = document.getElementById("email").value;
+          const nichoInput = document.getElementById("nicho").value;
+          const cidadeInput = document.getElementById("cidade").value;
+
+          // Estado visual de carregamento
           btn.innerText = "Processando...";
+          btn.disabled = true;
           btn.classList.add("opacity-70");
-          
-          // Como o navegador faz um "hard redirect" (recarrega a página) 
-          // ou exibe o JSON do n8n (caso falte o nó "Webhook Response" configurado no n8n para redirecionar de volta),
-          // mostramos a mensagem de sucesso visualmente por 1 segundo antes do navegador sair da página.
-          setTimeout(() => {
-            if(statusMsg) statusMsg.classList.remove("hidden");
-            btn.innerHTML = `✓ Acesso Liberado`;
+
+          // Montagem do payload nativo
+          const payload = new URLSearchParams({
+            nome: nomeInput,
+            email: emailInput,
+            nicho: nichoInput,
+            cidade: cidadeInput,
+            origem: "Landing Page Trinit",
+            data_captura: new Date().toISOString(),
+          });
+
+          try {
+            await fetch(
+              "https://thaydrose.app.n8n.cloud/webhook/e4d75ee6-4702-4246-8fef-eeff309c3e65",
+              {
+                method: "POST",
+                mode: "no-cors", // Esta é a trava que ignora o bloqueio da Vercel
+                body: payload,
+              }
+            );
+
+            // Confirmação de Sucesso
+            statusMsg.classList.remove("hidden");
+            btn.innerText = "✓ Acesso Liberado";
             btn.classList.replace("bg-cyberViolet", "bg-green-600");
-          }, 800);
-          
-          // IMPORTANTE: Não existe e.preventDefault() aqui.
-          // Isso garante que o navegador bypassa o CORS e envia o POST direto pro n8n.
+            btn.classList.replace("hover:bg-purple-400", "hover:bg-green-500");
+            btn.classList.replace("text-dark", "text-white");
+            btn.classList.remove("opacity-70");
+          } catch (error) {
+            btn.innerText = "Erro na conexão. Tente pelo WhatsApp.";
+            btn.disabled = false;
+            btn.classList.remove("opacity-70");
+          }
         });
       }
     </script>
