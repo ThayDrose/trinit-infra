@@ -347,7 +347,7 @@
             <p class="text-textGray text-sm leading-relaxed">
               Arquitetura de busca sob medida. Traduzimos os critérios de
               qualificação da sua operação em regras de código. Injetamos os
-              seus filtros de ICP no nosso motor para extrair uma base modelada
+              seus filtros de ICP no motor para extrair uma base modelada
               exclusivamente para o seu cenário.
             </p>
           </div>
@@ -594,10 +594,8 @@
 
         <!-- Formulário de Captura | trinit() integrado ao n8n -->
         <div id="captura-trinit" class="max-w-md mx-auto">
-          <!-- Modificação Crítica: Adição de ACTION e METHOD POST nativo -->
-          <form id="leadForm" action="https://thaydrose.app.n8n.cloud/webhook/e4d75ee6-4702-4246-8fef-eeff309c3e65" method="POST" class="flex flex-col gap-3">
+          <form id="leadForm" class="flex flex-col gap-3">
             
-            <!-- Campo oculto para enviar origem do lead automaticamente -->
             <input type="hidden" name="origem" value="Landing Page Trinit" />
             
             <input
@@ -717,7 +715,7 @@
       </span>
     </a>
 
-<script>
+    <script>
       // Número único do WhatsApp: altere só aqui.
       const WHATSAPP = "5548991623872";
       document.querySelectorAll("[data-wa]").forEach((a) => {
@@ -730,10 +728,18 @@
       const backToTopBtn = document.getElementById("backToTop");
       window.addEventListener("scroll", () => {
         if (window.scrollY > 400) {
-          backToTopBtn.classList.remove("opacity-0", "pointer-events-none", "translate-y-4");
+          backToTopBtn.classList.remove(
+            "opacity-0",
+            "pointer-events-none",
+            "translate-y-4",
+          );
           backToTopBtn.classList.add("opacity-100", "translate-y-0");
         } else {
-          backToTopBtn.classList.add("opacity-0", "pointer-events-none", "translate-y-4");
+          backToTopBtn.classList.add(
+            "opacity-0",
+            "pointer-events-none",
+            "translate-y-4",
+          );
           backToTopBtn.classList.remove("opacity-100", "translate-y-0");
         }
       });
@@ -773,12 +779,12 @@
               "https://thaydrose.app.n8n.cloud/webhook/e4d75ee6-4702-4246-8fef-eeff309c3e65",
               {
                 method: "POST",
-                mode: "no-cors", // Esta é a trava que ignora o bloqueio da Vercel
+                mode: "no-cors", // Esta é a trava que ignora o bloqueio
                 body: payload,
               }
             );
 
-            // Confirmação de Sucesso
+            // Confirmação de Sucesso sem trocar de tela
             statusMsg.classList.remove("hidden");
             btn.innerText = "✓ Acesso Liberado";
             btn.classList.replace("bg-cyberViolet", "bg-green-600");
