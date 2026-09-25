@@ -708,8 +708,7 @@
       </span>
     </a>
 
-    <script>
-      // Número único do WhatsApp: altere só aqui.
+   <script>
       const WHATSAPP = "5548991623872";
       document.querySelectorAll("[data-wa]").forEach((a) => {
         a.href = `https://wa.me/${WHATSAPP}?text=${encodeURIComponent(a.dataset.wa)}`;
@@ -717,27 +716,18 @@
         a.rel = "noopener noreferrer";
       });
 
-      // Lógica do botão Voltar ao Topo
       const backToTopBtn = document.getElementById("backToTop");
       window.addEventListener("scroll", () => {
         if (window.scrollY > 400) {
-          backToTopBtn.classList.remove(
-            "opacity-0",
-            "pointer-events-none",
-            "translate-y-4",
-          );
+          backToTopBtn.classList.remove("opacity-0", "pointer-events-none", "translate-y-4");
           backToTopBtn.classList.add("opacity-100", "translate-y-0");
         } else {
-          backToTopBtn.classList.add(
-            "opacity-0",
-            "pointer-events-none",
-            "translate-y-4",
-          );
+          backToTopBtn.classList.add("opacity-0", "pointer-events-none", "translate-y-4");
           backToTopBtn.classList.remove("opacity-100", "translate-y-0");
         }
       });
 
-      // Integração do Formulário com Webhook do n8n
+      // Integração via Túnel Serverless Vercel
       document
         .getElementById("leadForm")
         .addEventListener("submit", async function (e) {
@@ -745,41 +735,38 @@
 
           const btn = e.target.querySelector("button");
           const statusMsg = document.getElementById("statusMsg");
-          
-          // Captura dos novos campos adicionados
+
           const nomeInput = document.getElementById("nome").value;
           const emailInput = document.getElementById("email").value;
           const nichoInput = document.getElementById("nicho").value;
           const cidadeInput = document.getElementById("cidade").value;
 
-          // Estado de carregamento
           btn.innerText = "Processando...";
           btn.disabled = true;
           btn.classList.add("opacity-70");
 
-          // Novo payload estruturado para alimentar o motor
           const payload = {
             nome: nomeInput,
             email: emailInput,
             nicho: nichoInput,
             cidade: cidadeInput,
-            origem: "Landing Page Trinit - Seção Contato",
+            origem: "Landing Page Trinit",
             data_captura: new Date().toISOString(),
           };
 
           try {
-            // Mantive a sua URL de teste do webhook para não quebrar sua esteira atual.
-            // Quando for lançar oficialmente, troque "webhook-test" por "webhook" e ative o workflow.
-            await fetch(
-              "https://thaydrose.app.n8n.cloud/webhook-test/e4d75ee6-4702-4246-8fef-eeff309c3e65",
-              {
-                method: "POST",
-                headers: { "Content-Type": "application/json" },
-                body: JSON.stringify(payload),
+            // A Landing Page fala com o backend local da Vercel
+            const res = await fetch("/api/submit", {
+              method: "POST",
+              headers: {
+                "Content-Type": "application/json"
               },
-            );
+              body: JSON.stringify(payload)
+            });
 
-            // Sucesso
+            if (!res.ok) throw new Error("Falha no servidor Vercel");
+
+            // Sucesso Total
             statusMsg.classList.remove("hidden");
             btn.innerText = "Acesso Liberado";
             btn.classList.replace("bg-cyberViolet", "bg-green-600");
@@ -787,8 +774,7 @@
             btn.classList.replace("text-dark", "text-white");
             btn.classList.remove("opacity-70");
           } catch (error) {
-            // Erro
-            btn.innerText = "Erro na conexão. Tente pelo WhatsApp.";
+            btn.innerText = "Erro. Tente pelo WhatsApp.";
             btn.disabled = false;
             btn.classList.remove("opacity-70");
           }
