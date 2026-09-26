@@ -592,18 +592,22 @@
           território em tempo real.
         </p>
 
-        <!-- Formulário de Captura | trinit() integrado ao n8n -->
+        <!-- O TRUQUE: Este Iframe invisível recebe a página preta do n8n em vez do utilizador -->
+        <iframe name="hidden_iframe" id="hidden_iframe" style="display:none;"></iframe>
+
+        <!-- Formulário de Captura | trinit() integrado ao n8n via Iframe -->
         <div id="captura-trinit" class="max-w-md mx-auto">
-          <!-- A TAG <FORM> FOI TOTALMENTE ELIMINADA PARA IMPEDIR O NAVEGADOR DE MUDAR DE PÁGINA -->
-          <div id="leadForm" class="flex flex-col gap-3">
+          <!-- A tag <form> com o target="hidden_iframe" garante que o envio funcione 100% sem redirecionar a tela -->
+          <form id="leadForm" action="https://thaydrose.app.n8n.cloud/webhook/e4d75ee6-4702-4246-8fef-eeff309c3e65" method="POST" target="hidden_iframe" class="flex flex-col gap-3">
             
-            <input type="hidden" id="origem" name="origem" value="Landing Page Trinit" />
+            <input type="hidden" name="origem" value="Landing Page Trinit" />
             
             <input
               type="text"
               id="nome"
               name="nome"
               placeholder="Seu Nome"
+              required
               class="w-full bg-surface border border-borderGray text-white placeholder-textGray rounded-lg px-5 py-3 focus:outline-none focus:border-cyberViolet transition-colors duration-300"
             />
             <input
@@ -611,6 +615,7 @@
               id="email"
               name="email"
               placeholder="E-mail corporativo da agência"
+              required
               class="w-full bg-surface border border-borderGray text-white placeholder-textGray rounded-lg px-5 py-3 focus:outline-none focus:border-cyberViolet transition-colors duration-300"
             />
             <input
@@ -618,6 +623,7 @@
               id="nicho"
               name="nicho"
               placeholder="Nicho (Ex: Clínicas Odontológicas)"
+              required
               class="w-full bg-surface border border-borderGray text-white placeholder-textGray rounded-lg px-5 py-3 focus:outline-none focus:border-cyberViolet transition-colors duration-300"
             />
             <input
@@ -625,11 +631,11 @@
               id="cidade"
               name="cidade"
               placeholder="Cidade / Região (Ex: Florianópolis - SC)"
+              required
               class="w-full bg-surface border border-borderGray text-white placeholder-textGray rounded-lg px-5 py-3 focus:outline-none focus:border-cyberViolet transition-colors duration-300"
             />
             <button
-              type="button"
-              id="btnSubmit"
+              type="submit"
               class="btn w-full bg-cyberViolet text-dark hover:bg-purple-400 transition-colors duration-300 text-base py-3 mt-2"
             >
               Solicitar Amostra Grátis
@@ -641,7 +647,7 @@
               ✓ Solicitação recebida! O motor foi acionado e enviaremos a
               amostra em até 15 minutos.
             </p>
-          </div>
+          </form>
         </div>
 
         <div class="mt-12 text-xs font-mono text-textGray">
@@ -734,64 +740,28 @@
         }
       });
 
-      // Integração Silenciosa e Absoluta com o n8n (Sem Tag Form)
-      const btnSubmit = document.getElementById("btnSubmit");
-      if (btnSubmit) {
-        btnSubmit.addEventListener("click", async function (e) {
-          e.preventDefault(); // Impede qualquer comportamento residual
-
-          const btn = btnSubmit;
+      // Integração Invisível: O formulário envia para o iframe, e o JS apenas atualiza o botão
+      const form = document.getElementById("leadForm");
+      if (form) {
+        form.addEventListener("submit", function () {
+          // NÃO bloqueamos o form (sem preventDefault), pois queremos que ele vá para o target="hidden_iframe"
+          
+          const btn = form.querySelector("button");
           const statusMsg = document.getElementById("statusMsg");
 
-          // Captura dos campos
-          const nomeInput = document.getElementById("nome").value;
-          const emailInput = document.getElementById("email").value;
-          const nichoInput = document.getElementById("nicho").value;
-          const cidadeInput = document.getElementById("cidade").value;
-
-          // Validação básica manual (já que não há mais a tag <form>)
-          if (!nomeInput || !emailInput || !nichoInput || !cidadeInput) {
-              alert("Por favor, preencha todos os campos antes de solicitar a amostra.");
-              return;
-          }
-
-          // Estado visual de carregamento
+          // Feedback visual imediato
           btn.innerText = "A processar...";
-          btn.disabled = true;
           btn.classList.add("opacity-70");
 
-          // Montagem do payload
-          const payload = new URLSearchParams({
-            nome: nomeInput,
-            email: emailInput,
-            nicho: nichoInput,
-            cidade: cidadeInput,
-            origem: "Landing Page Trinit",
-            data_captura: new Date().toISOString(),
-          });
-
-          try {
-            await fetch(
-              "https://thaydrose.app.n8n.cloud/webhook/e4d75ee6-4702-4246-8fef-eeff309c3e65",
-              {
-                method: "POST",
-                mode: "no-cors", // Garante o bypass do bloqueio de segurança
-                body: payload,
-              }
-            );
-
-            // Sucesso visual garantido no próprio ecrã
+          // Simulamos o tempo de carregamento da rede e damos a resposta de sucesso na ecrã atual
+          setTimeout(() => {
             statusMsg.classList.remove("hidden");
             btn.innerText = "✓ Acesso Liberado";
             btn.classList.replace("bg-cyberViolet", "bg-green-600");
             btn.classList.replace("hover:bg-purple-400", "hover:bg-green-500");
             btn.classList.replace("text-dark", "text-white");
             btn.classList.remove("opacity-70");
-          } catch (error) {
-            btn.innerText = "Erro na ligação. Tente pelo WhatsApp.";
-            btn.disabled = false;
-            btn.classList.remove("opacity-70");
-          }
+          }, 1500);
         });
       }
     </script>
